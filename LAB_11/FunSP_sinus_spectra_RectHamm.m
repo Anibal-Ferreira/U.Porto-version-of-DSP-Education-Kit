@@ -1,12 +1,12 @@
 %
 % Fundamentals of Signal Processing
 %
-% L.EEC025             2021/2022
+% L.EEC025             2022/2023
 % U.Porto-DEEC
 %
 % Author: Prof. Aníbal Ferreira (AJF)
 % Week 12 lab work (any other utilization requires prior written
-% consent by Prof. Aníbal Ferreira)
+% consent from Prof. Aníbal Ferreira)
 %
 %
 
@@ -39,8 +39,8 @@ for freq=500:2.5:1600
     
     OMEGA0=2*pi*freq;
     omega0=OMEGA0/FS;
-    % x=sin(OMEGA0*n/FS);
-    x=0.5*exp(1j*OMEGA0*n/FS);
+    x=sin(OMEGA0*n/FS);
+    % x=0.5*exp(1j*OMEGA0*n/FS);
     
     % x=sawtooth(2*pi*freq*n/FS);
     % x=square(2*pi*freq*n/FS);
@@ -65,7 +65,7 @@ for freq=500:2.5:1600
     
 
     subplot(1,2,1);
-    plot(n/FS*1000,x)
+    plot(n/FS*1000,real(x))
     axis([0 N/FS*1000 -1.2 1.2]);
     title('Sinusoid');
     xlabel('Time (ms)');
